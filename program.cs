@@ -10,11 +10,15 @@ namespace csharptests
         {
             while (true)
             {
+                Console.Clear();
                 try
                 {
-                    Console.WriteLine("Generic List:1\r\n\r\nList With Enumerator:2\r\n\r\nList With Comparer:3\r\n");
+                    Console.WriteLine(
+                        "Generic List:1\r\n\r\n" +
+                        "List With Enumerator:2\r\n\r\n" +
+                        "List With Comparer:3\r\n\r\n" +
+                        "Extensions:4");
                     int opt = Convert.ToInt16(Console.ReadLine());
-                    Console.Clear();
                     switch (opt)
                     {
                         case 1:
@@ -26,6 +30,9 @@ namespace csharptests
                         case 3:
                             GenericListComparerRun();
                             break;
+                        case 4:
+                            Extensions();
+                            break;
                         default:
                             break;
                     }
@@ -35,6 +42,31 @@ namespace csharptests
                     Console.WriteLine("Please type an integer value");
                 }
             }
+        }
+
+        static void Extensions()
+        {
+            // Calling first method - AddNObjectsToCollection
+            var bookList = new List<Book>();
+            bookList.AddNObjectsToCollection(4);
+
+            foreach (Book b in bookList)
+            {
+                Console.WriteLine(b.CreatedTime.ToString());
+            }
+            // ========== OR ==========
+            // Calling second method - GenerateSpecificNumberOfCollection
+            var bookList2 = new List<Book>().GenerateSpecificNumberOfCollection(3);
+
+
+            foreach (Book b in bookList2)
+            {
+                Console.WriteLine(b.CreatedTime.ToString());
+            }
+
+
+            System.Console.WriteLine("\nDone");
+            Console.Read();
         }
 
         static void GenericListRun()
@@ -119,6 +151,7 @@ namespace csharptests
                 }
             }
 
+            System.Console.WriteLine("\nDone");
             Console.Read();
         }
 
@@ -162,7 +195,7 @@ namespace csharptests
                 Console.WriteLine(cus.Name + " " + cus.Age);
             }
 
-
+            System.Collections.Generic.
             //2nd Overload   
             List<Personel> cuslist2 = new List<Personel>();
             #region list2
@@ -366,6 +399,7 @@ namespace csharptests
 
 
 
+            System.Console.WriteLine("\nDone");
             Console.Read();
         }
     }
