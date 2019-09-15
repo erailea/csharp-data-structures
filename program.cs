@@ -17,7 +17,8 @@ namespace csharptests
                         "Generic List:1\r\n\r\n" +
                         "List With Enumerator:2\r\n\r\n" +
                         "List With Comparer:3\r\n\r\n" +
-                        "Extensions:4");
+                        "Extensions:4\r\n\r\n" +
+                        "LinkedList:5");
                     int opt = Convert.ToInt16(Console.ReadLine());
                     switch (opt)
                     {
@@ -33,6 +34,9 @@ namespace csharptests
                         case 4:
                             Extensions();
                             break;
+                        case 5:
+                            LinkedListRun();
+                            break;
                         default:
                             break;
                     }
@@ -42,6 +46,22 @@ namespace csharptests
                     Console.WriteLine("Please type an integer value");
                 }
             }
+        }
+
+        static void LinkedListRun()
+        {
+            LinkedList<int, string> ll = new LinkedList<int, string>();
+            ll.AddNodeFirst(0, "0");
+            ll.AddNodeFirst(1, "1");
+            ll.AddNodeLast(2, "2");
+            ll.AddNodeFirst(3, "3");
+            ll.AddNodeFirst(4, "4");
+
+            foreach (string item in ll)
+            {
+                Console.WriteLine(item);
+            }
+            Console.Read();
         }
 
         static void Extensions()

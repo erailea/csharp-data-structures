@@ -46,6 +46,7 @@
     <Compile Include="GenericList.cs" />
     <Compile Include="GenericListComparer.cs" />
     <Compile Include="GenericListEnumerator.cs" />
+    <Compile Include="LinkedList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilityExt.cs" />
