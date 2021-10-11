@@ -19,6 +19,7 @@ namespace GenericList
             }
 
             private Node next;
+            private Node asd;
             public Node Next
             {
                 get { return next; }
